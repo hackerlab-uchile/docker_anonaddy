@@ -89,7 +89,7 @@ RUN apk --no-cache add -t build-dependencies \
   && addgroup anonaddy mail \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
   && git config --global --add safe.directory /var/www/anonaddy \
-  && git init . && git remote add origin "https://github.com/anonaddy/anonaddy.git" \
+  && git init . && git remote add origin "https://github.com/hackerlab-uchile/anonaddy" \
   && git fetch --depth 1 origin "v${ANONADDY_VERSION}" && git checkout -q FETCH_HEAD \
   && composer install --optimize-autoloader --no-dev --no-interaction --no-ansi \
   && chown -R anonaddy. /var/www/anonaddy \
